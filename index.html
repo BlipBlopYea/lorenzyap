@@ -3,113 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Portfolio | Student Developer</title>
-    <!-- Linking to our CSS file below -->
+    <title>Your Name Photography & Digital Art</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Optional: Use a clean modern font like Inter from Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="dark-theme">
+<body>
 
-    <!-- Navigation (Yuji-inspired, minimal) -->
-    <nav class="navbar">
-        <div class="logo">My<span class="highlight">Portfolio</span></div>
-        <div class="nav-links">
-            <a href="#projects">Projects</a>
-            <a href="#about">About</a>
-            <!-- Simple placeholder for theme toggle -->
-            <button id="theme-icon" class="theme-btn">🌙</button>
-        </div>
-    </nav>
-
-    <!-- Main Content Container (to keep things centered) -->
-    <main class="container">
-
-        <!-- Hero Section (Centered welcome) -->
-        <header class="hero">
-            <h1 class="fade-in">Hi, I'm <span class="highlight">Your Name</span>.</h1>
-            <p class="subtitle fade-in">A student developer specializing in building clean, impactful web applications.</p>
-            <div class="cta-btns fade-in">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="mailto:your.email@example.com" class="btn btn-secondary">Get In Touch</a>
+    <div class="container">
+        <!-- Navigation Header Bar -->
+        <nav class="navbar">
+            <div class="logo">Your Name</div>
+            <div class="nav-links">
+                <a href="#portfolio">Portfolio</a>
+                <a href="#about">About</a>
+                <a href="mailto:your.email@example.com">Contact</a>
             </div>
+        </nav>
+
+        <!-- Minimalist Hero Intro -->
+        <header class="hero">
+            <h1>Avian Wildlife & Landscape Visual Studies</h1>
+            <p class="subtitle">A showcase of outdoor photography paired with digital retouching, precise subject isolation masking, and atmospheric color grading.</p>
         </header>
 
-        <!-- Projects Section (Inspired Grid Layout) -->
-        <section id="projects" class="projects-section">
-            <h2>Featured Projects</h2>
-            <div class="projects-grid">
+        <!-- BEFORE/AFTER IMAGE SLIDER SECTION -->
+        <section class="slider-section">
+            <div class="slider-container" id="beforeAfterSlider">
+                <!-- Before/RAW Image Layer -->
+                <img src="image_cfef04.jpg" alt="RAW Image" class="slider-img img-before" id="beforeImg">
+                <div class="slider-badge badge-raw">RAW (Hazy Kitlens)</div>
 
-                <!-- Project Card 1 -->
-                <div class="card">
-                    <div class="card-image placeholder-image">
-                        <!-- If you have an image, replace this div with: <img src="project1.png" alt="Project 1"> -->
-                    </div>
-                    <div class="card-content">
-                        <h3>Project One: School App</h3>
-                        <p>A web application built to help students manage homework assignments. Focus on UX and data persistence.</p>
-                        <div class="tech-stack">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="card-links">
-                            <a href="#" target="_blank" class="live-link">Live Demo</a>
-                            <a href="#" target="_blank" class="code-link">View Code</a>
-                        </div>
+                <!-- After/EDITED Image Layer -->
+                <img src="image_cfee8f.jpg" alt="Edited Image" class="slider-img img-after">
+                <div class="slider-badge badge-edited">Final Color Grade</div>
+
+                <!-- Interactive Sliding Bar divider -->
+                <div class="slider-handle" id="sliderHandle">
+                    <div class="slider-button">↔</div>
+                </div>
+            </div>
+            <p style="text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 15px;">
+                <strong>Interactive Study:</strong> Click and drag the divider slider to reveal the raw image data processing workflow.
+            </p>
+        </section>
+
+        <!-- FINE ART PHOTOGRAPHY GALLERY (Simon d'Entremont Style) -->
+        <section id="portfolio" class="gallery-section">
+            <h2>Featured Works</h2>
+            <div class="gallery-grid">
+
+                <!-- Photo 1 -->
+                <div class="gallery-card">
+                    <img src="image_cfe800.jpg" alt="Eurasian Tree Sparrow">
+                    <div class="gallery-info">
+                        <h3>Complementary Tones</h3>
+                        <p>Teal & Gold Palette Calibration • Luminance Target Masking</p>
                     </div>
                 </div>
 
-                <!-- Project Card 2 -->
-                <div class="card">
-                    <div class="card-image placeholder-image"></div>
-                    <div class="card-content">
-                        <h3>Project Two: Python Tool</h3>
-                        <p>A small command-line interface tool to automate repetitive data scraping tasks for class research.</p>
-                        <div class="tech-stack">
-                            <span>Python</span>
-                            <span>Automation</span>
-                        </div>
-                        <div class="card-links">
-                            <a href="#" target="_blank" class="code-link">View Code</a>
-                        </div>
+                <!-- Photo 2 -->
+                <div class="gallery-card">
+                    <img src="image_cfe7e2.jpg" alt="Chestnut Munia">
+                    <div class="gallery-info">
+                        <h3>High-Angle Contrast</h3>
+                        <p>Dynamic Silhouette Recovery • Chromatic Aberration Correction</p>
                     </div>
                 </div>
 
-                <!-- You can copy/paste another 'card' block here for a 3rd project -->
+                <!-- Photo 3 -->
+                <div class="gallery-card">
+                    <img src="image_cfe7c2.jpg" alt="Striated Grassbird">
+                    <div class="gallery-info">
+                        <h3>Subject Isolation</h3>
+                        <p>Environmental Exposure Shifting • Focus Depth Optimization</p>
+                    </div>
+                </div>
+
+                <!-- Photo 4 -->
+                <div class="gallery-card">
+                    <img src="image_cfe7a1.jpg" alt="Olive-backed Sunbird">
+                    <div class="gallery-info">
+                        <h3>Iridescence Separation</h3>
+                        <p>Selective Hue Mapping • Shadow Retexturing Workflows</p>
+                    </div>
+                </div>
 
             </div>
         </section>
 
-        <!-- About Section (Minimalist summary) -->
-        <section id="about" class="about-section">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <p>Currently studying [Your Major/Class] at [School Name]. I enjoy solving puzzles through code and making accessible digital experiences. Outside of school, you can find me exploring new technologies or [mention a hobby].</p>
-                
-                <div class="skills-list">
-                    <h3>Skills:</h3>
-                    <ul>
-                        <li>JavaScript (ES6+)</li>
-                        <li>HTML5 & CSS3</li>
-                        <li>Responsive Design</li>
-                        <li>Python</li>
-                        <li>Git & GitHub</li>
-                    </ul>
-                </div>
+        <!-- Minimalist About text -->
+        <section id="about" style="padding: 60px 0; border-top: 1px solid var(--border-color); text-align: center;">
+            <div style="max-width: 650px; margin: 0 auto;">
+                <h2 style="font-size: 1.5rem; margin-bottom: 20px;">About the Process</h2>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">
+                    I am an editor and graphic designer with an emphasis on pixel-level color precision and digital image enhancement. Treating raw sensor data as an un-rendered canvas, my workflow optimizes dynamic range and local color grading to create impactful visual narratives from real-world captures.
+                </p>
             </div>
         </section>
 
-    </main>
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2026 Your Name. All images captured and processed natively.</p>
+        </footer>
+    </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>© 2024 Your Name. Built with curiosity and code.</p>
-    </footer>
-
-    <!-- Linking to our optional JS file below -->
     <script src="script.js"></script>
 </body>
 </html>
