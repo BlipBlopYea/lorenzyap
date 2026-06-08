@@ -21,6 +21,8 @@ document.addEventListener("DOMContentLoaded", function() {
         const percentage = position * 100;
         beforeImg.style.width = `${percentage}%`;
         handle.style.left = `${percentage}%`;
+        // Inside your slider input event listener, change it to update clipPath:
+beforeImg.style.clipPath = `inset(0 ${100 - sliderValue}% 0 0)`;
     }
 
     // --- Mouse Event Controls ---
