@@ -1,140 +1,135 @@
-/* --- Base Styles (Simon d'Entremont Inspired Light Theme) --- */
+/* ==========================================
+   1. GLOBAL STYLES & VARIABLES
+   ========================================== */
 :root {
-    --bg-color: #ffffff;
-    --text-color: #1a1a1a;
-    --text-muted: #666666;
-    --accent-color: #222222;
-    --border-color: #e5e5e5;
-    --card-bg: #f9f9f9;
+    --bg-primary: #121212;
+    --bg-surface: #1e1e1e;
+    --text-main: #ffffff;
+    --text-muted: #a0a0a0;
+    --accent: #ffffff;
+    --border-color: #2a2a2a;
 }
 
-html {
-    scroll-behavior: smooth;
+* {
+    margin: 0;
+    padding: 0;
+    box-box-sizing: border-box;
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    margin: 0;
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
+    padding: 40px 20px;
 }
 
-.container {
-    max-width: 1100px;
+.portfolio-container {
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 0 30px;
 }
 
-/* --- Navigation --- */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 0;
-    border-bottom: 1px solid var(--border-color);
-    background-color: var(--bg-color);
-}
-
-.logo {
-    font-size: 1.25rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-.nav-links {
-    display: flex;
-    gap: 30px;
-}
-
-.nav-links a {
-    color: var(--text-muted);
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: color 0.2s ease;
-}
-
-.nav-links a:hover {
-    color: var(--text-color);
-}
-
-/* --- Hero Section --- */
-.hero {
-    padding: 80px 0 60px 0;
+/* ==========================================
+   2. HEADER & TEXT STYLES
+   ========================================== */
+header {
     text-align: center;
+    margin-bottom: 60px;
 }
 
-.hero h1 {
+header h1 {
     font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 15px;
+    font-weight: 400;
     letter-spacing: -0.5px;
+    margin-bottom: 12px;
 }
 
-.subtitle {
-    font-size: 1.1rem;
+header p {
     color: var(--text-muted);
-    max-width: 650px;
-    margin: 0 auto 30px auto;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-/* --- Interactive Before/After Slider --- */
+.section-title {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+/* ==========================================
+   3. PERFECT FIXED SLIDER STYLES
+   ========================================== */
 .slider-section {
-    padding: 40px 0;
+    margin-bottom: 80px;
 }
 
-.slider-section h2 {
-    font-size: 1.75rem;
-    margin-bottom: 10px;
-}
-
+/* Main outer box wrapper */
 .slider-container {
     position: relative;
     width: 100%;
     max-width: 800px;
     height: 500px;
     margin: 0 auto;
+    border-radius: 8px;
     overflow: hidden;
-    border-radius: 4px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
+/* Shared properties for the base images */
 .slider-img {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
     height: 100%;
     object-fit: cover;
     user-select: none;
+    pointer-events: none;
 }
 
-/* The edited image layer that gets cropped */
-.img-before {
-    z-index: 2;
-    width: 50%; /* Initial split position */
-}
-
+/* The AFTER (Edited) Image underneath */
 .img-after {
     z-index: 1;
+    width: 100%;
+    height: 100%;
 }
 
-/* The Draggable Bar */
+/* The BEFORE (Raw) CONTAINER layer that shifts */
+.img-before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 2;
+    width: 50%; /* Your JavaScript updates this container's width */
+    overflow: hidden; /* ACTS AS A WINDOW: Cuts the picture off cleanly instead of squishing */
+}
+
+/* FIX CODE: Forces the raw image inside the container to stay rock-solid full width */
+.img-before img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 800px; /* Locks width cleanly to match your slider container width */
+    max-width: none; /* Prevents the browser from auto-shrinking it */
+    height: 100%;
+    object-fit: cover;
+}
+
+/* The Interactive Drag Bar Line */
 .slider-handle {
     position: absolute;
-    z-index: 3;
     top: 0;
-    left: 50%;
-    width: 4px;
-    height: 100%;
-    background-color: #ffffff;
+    bottom: 0;
+    left: 50%; /* Your JavaScript updates this left position */
+    width: 2px;
+    background: #ffffff;
+    z-index: 10;
     cursor: ew-resize;
-    transform: translateX(-50%);
 }
 
-/* The Button on the Bar */
+/* The round arrow circle button */
 .slider-button {
     position: absolute;
     top: 50%;
@@ -142,150 +137,113 @@ body {
     transform: translate(-50%, -50%);
     width: 40px;
     height: 40px;
-    background-color: #ffffff;
+    background: #ffffff;
     border-radius: 50%;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    color: #333333;
+    font-size: 14px;
     font-weight: bold;
-    font-size: 0.8rem;
-    color: #333;
-    pointer-events: none; /* Let clicks pass through to bar */
 }
 
-/* Badges for RAW / EDITED */
+/* Badges (RAW / FINAL COLOR GRADE) */
 .slider-badge {
     position: absolute;
-    bottom: 15px;
-    z-index: 4;
-    background: rgba(0,0,0,0.6);
-    color: #fff;
-    padding: 4px 10px;
+    bottom: 20px;
+    padding: 6px 12px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    border-radius: 4px;
     font-size: 0.75rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
-    border-radius: 2px;
-    pointer-events: none;
-}
-.badge-raw { left: 15px; }
-.badge-edited { right: 15px; }
-
-/* --- Fine Art Photography Grid --- */
-.gallery-section {
-    padding: 80px 0;
-    border-top: 1px solid var(--border-color);
+    z-index: 5;
 }
 
-.gallery-section h2 {
-    font-size: 1.75rem;
-    margin-bottom: 40px;
-    text-align: center;
+.badge-raw {
+    left: 20px;
 }
 
+.badge-edited {
+    right: 20px;
+}
+
+/* ==========================================
+   4. FEATURED WORKS GALLERY GRID
+   ========================================== */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 20px;
 }
 
 .gallery-card {
-    background: var(--bg-color);
+    background-color: var(--bg-surface);
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.3);
 }
 
 .gallery-card img {
     width: 100%;
-    height: 380px;
+    height: 320px;
     object-fit: cover;
-    border-radius: 2px;
-    transition: opacity 0.3s ease;
-}
-
-.gallery-card img:hover {
-    opacity: 0.9;
+    display: block;
 }
 
 .gallery-info {
-    padding: 15px 0;
+    padding: 24px;
 }
 
 .gallery-info h3 {
-    margin: 0 0 5px 0;
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 6px;
 }
 
 .gallery-info p {
-    margin: 0;
-    font-size: 0.85rem;
     color: var(--text-muted);
-    letter-spacing: 0.5px;
+    font-size: 0.85rem;
+    letter-spacing: 0.3px;
 }
 
-/* --- Footer --- */
-.footer {
-    text-align: center;
-    padding: 60px 0;
-    border-top: 1px solid var(--border-color);
-    font-size: 0.85rem;
-    color: var(--text-muted);
-}
-
-/* --- Responsive Adjustments --- */
+/* ==========================================
+   5. RESPONSIVE MOBILE OPTIMIZATION
+   ========================================== */
 @media (max-width: 768px) {
-    .slider-container { height: 350px; }
-    .gallery-grid { grid-template-columns: 1fr; }
-}
-.slider-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    user-select: none;
-}
+    body {
+        padding: 20px 10px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .slider-container {
+        height: 350px;
+    }
 
-.slider-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    user-select: none;
-}
-
-/* Container holding both layers */
-.slider-container {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    height: 500px;
-    overflow: hidden;
-}
-
-/* Base style for both images to keep them identical and locked */
-.slider-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    user-select: none;
-    pointer-events: none;
-}
-
-/* The actual elements in your HTML */
-#beforeImg {
-    z-index: 2;
-    width: 50%; /* Your JavaScript updates this directly */
-    object-position: left; /* Forces the photo content to anchor left */
-}
-
-.img-after {
-    z-index: 1;
-    width: 100%;
+    /* Adjust the fixed raw image size on mobile screens */
+    .img-before img {
+        width: 100vw; 
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .gallery-card img {
+        height: 260px;
+    }
 }
