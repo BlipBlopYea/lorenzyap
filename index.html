@@ -29,20 +29,19 @@
         </header>
 
         <!-- BEFORE/AFTER IMAGE SLIDER SECTION -->
-        <section class="slider-section">
-            <div class="slider-container" id="beforeAfterSlider">
-                <!-- Before/RAW Image Layer -->
-                <img src="Raw1.jpg" alt="RAW Image" class="slider-img img-before" id="beforeImg">
-                <div class="slider-badge badge-raw">RAW (Hazy Kitlens)</div>
+       <div class="slider-container">
+    <img src="Edit1.jpg" alt="Edited Image" class="slider-img img-after">
+    <div class="slider-badge badge-edited">Final Color Grade</div>
 
-                <!-- After/EDITED Image Layer -->
-                <img src="Edit1.jpg" alt="Edited Image" class="slider-img img-after">
-                <div class="slider-badge badge-edited">Final Color Grade</div>
+    <div class="img-before" id="beforeImg">
+        <img src="Raw1.jpg" alt="RAW Image" class="slider-img">
+        <div class="slider-badge badge-raw">RAW (Hazy Kitlens)</div>
+    </div>
 
-                <!-- Interactive Sliding Bar divider -->
-                <div class="slider-handle" id="sliderHandle">
-                    <div class="slider-button">↔</div>
-                </div>
+    <div class="slider-handle" id="sliderHandle">
+        <div class="slider-button">↔</div>
+    </div>
+</div>
             </div>
             <p style="text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 15px;">
                 <strong>Comparison:</strong> Click and drag the divider slider to reveal the editing done.
