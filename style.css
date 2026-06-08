@@ -257,14 +257,34 @@ body {
     user-select: none;
 }
 
-/* The RAW image layer on top */
-.img-before {
-    z-index: 2;
-    /* This clips the image visually without changing its actual width or squishing it */
-    clip-path: inset(0 50% 0 0); 
+/* Container holding both layers */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    overflow: hidden;
 }
 
-/* The EDITED image layer underneath */
+/* Base style for both images to keep them identical and locked */
+.slider-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    user-select: none;
+    pointer-events: none;
+}
+
+/* The actual elements in your HTML */
+#beforeImg {
+    z-index: 2;
+    width: 50%; /* Your JavaScript updates this directly */
+    object-position: left; /* Forces the photo content to anchor left */
+}
+
 .img-after {
     z-index: 1;
     width: 100%;
