@@ -13,7 +13,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
@@ -106,7 +106,7 @@ header p {
     overflow: hidden; /* ACTS AS A WINDOW: Cuts the picture off cleanly instead of squishing */
 }
 
-/* FIX CODE: Forces the raw image inside the container to stay rock-solid full width */
+/* Forces the raw image inside the container to stay rock-solid full width */
 .img-before img {
     position: absolute;
     top: 0;
@@ -115,6 +115,20 @@ header p {
     max-width: none; /* Prevents the browser from auto-shrinking it */
     height: 100%;
     object-fit: cover;
+}
+
+/* Invisible range slider covering the entire container box */
+.slider-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 20;
+    cursor: ew-resize;
+    margin: 0;
+    padding: 0;
 }
 
 /* The Interactive Drag Bar Line */
@@ -126,7 +140,7 @@ header p {
     width: 2px;
     background: #ffffff;
     z-index: 10;
-    cursor: ew-resize;
+    pointer-events: none; /* Let the click fall through to the range input */
 }
 
 /* The round arrow circle button */
