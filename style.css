@@ -27,40 +27,37 @@ body {
     max-width: 1400px; 
     margin: 0 auto; 
     display: flex; 
-    justify-content: space-between; /* Keeps logo on left */
+    justify-content: space-between; /* Keeps the logo on the left */
     align-items: center; 
     flex-wrap: nowrap;
+    padding: 0 20px; /* Ensures the container doesn't hit the screen edge */
 }
 
-.nav-logo { 
-    font-weight: 900; 
-    color: #000; 
-    font-size: 1.5rem; 
-    white-space: nowrap; 
-}
-
+/* Update this to pull the links together */
 .nav-links { 
     display: flex; 
     align-items: center; 
     white-space: nowrap;
-    margin-left: auto; /* THIS IS THE FIX: This pushes the links to the right */
+    margin-left: auto; 
+    gap: 40px; /* THIS IS THE KEY: Replaces the margins on individual links */
 }
 
+/* Remove the individual left-margin that was spreading them out */
 .nav-links a { 
     color: #333; 
     text-decoration: none; 
-    margin-left: 30px; 
+    margin-left: 0; /* Changed from 30px to 0 */
     font-weight: 700; 
     font-size: 1rem;
     transition: all 0.3s ease;
 }
 
-/* Dropdown */
+/* Keep the dropdown adjusted to work with the new gap */
 .dropdown { 
     position: relative; 
     display: inline-block; 
-    margin-left: 30px; 
-    padding: 15px 0; /* Keeps menu open when moving mouse down */
+    margin-left: 0; /* Changed from 30px to 0 */
+    padding: 15px 0;
 }
 
 .dropdown-content { 
