@@ -1,21 +1,27 @@
 :root { --bg-color: #ffffff; --text-color: #000000; }
 body { background-color: var(--bg-color); color: var(--text-color); font-family: 'Inter', sans-serif; }
 
-/* Navigation */
 .site-navigation { background: #fff; padding: 30px 50px; border-bottom: 1px solid #eee; }
 .nav-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
 .nav-logo { font-size: 1.8rem; font-weight: 900; }
 .nav-links a { color: #000; text-decoration: none; margin-left: 40px; font-weight: 700; font-size: 1.1rem; }
 
-/* Hero */
-.hero-carousel { width: 100%; aspect-ratio: 3 / 2; margin-bottom: 80px; }
+/* 3:2 Ratio Fixed */
+.hero-carousel { width: 100%; aspect-ratio: 3 / 2; overflow: hidden; margin-bottom: 80px; }
+.carousel-slide { width: 100%; height: 100%; display: none; }
 .carousel-slide img { width: 100%; height: 100%; object-fit: cover; }
 
-/* Slider Section */
 .section-title { text-align: center; font-size: 3.5rem; font-weight: 900; margin-bottom: 50px; }
-.slider-container { position: relative; width: 90%; max-width: 1200px; height: 650px; margin: 0 auto 100px; border-radius: 20px; overflow: hidden; box-shadow: 0 25px 60px rgba(0,0,0,0.15); }
 
-/* About Section 1:1 Layout */
+/* Landscape Slider Fixed */
+.slider-container { position: relative; width: 90%; max-width: 1200px; aspect-ratio: 3 / 2; margin: 0 auto 100px; border-radius: 20px; overflow: hidden; box-shadow: 0 25px 60px rgba(0,0,0,0.15); }
+.slider-img { width: 100%; height: 100%; object-fit: cover; position: absolute; }
+.img-before { position: absolute; top: 0; left: 0; height: 100%; width: 50%; overflow: hidden; z-index: 2; border-right: 2px solid white; }
+.img-before img { width: 1200px; height: 100%; object-fit: cover; }
+.slider-input { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; z-index: 20; }
+.slider-handle { position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; background: #fff; z-index: 10; pointer-events: none; }
+.slider-button { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 50px; height: 50px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #000; font-size: 20px; }
+
 .about-section { background: #fff; padding: 0; }
 .about-container { display: flex; align-items: center; width: 100%; }
 .about-image-side { width: 50%; aspect-ratio: 1 / 1; }
@@ -24,6 +30,6 @@ body { background-color: var(--bg-color); color: var(--text-color); font-family:
 .about-text-side h2 { font-size: 3rem; font-weight: 900; margin-bottom: 30px; }
 .about-text-side p { font-size: 1.4rem; color: #333; line-height: 1.8; }
 
-/* Footer */
-.site-footer { padding: 80px; text-align: center; border-top: 1px solid #eee; }
-.footer-links a { margin: 0 25px; font-weight: 700; color: #666; text-decoration: none; }
+/* Footer Black */
+.site-footer { padding: 80px; text-align: center; background: #000; color: #fff; }
+.footer-links a { margin: 0 25px; font-weight: 700; color: #ccc; text-decoration: none; }
