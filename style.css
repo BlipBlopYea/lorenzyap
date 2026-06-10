@@ -84,3 +84,39 @@ body { background-color: var(--bg-color); color: var(--text-color); font-family:
 .about-page { padding: 80px 20px; max-width: 900px; margin: 0 auto; line-height: 1.8; }
 .about-content h1 { font-size: 3rem; margin-bottom: 30px; font-weight: 900; }
 .about-text p { margin-bottom: 25px; font-size: 1.1rem; color: #333; }
+
+/* Layout: Image Left, Text Right */
+.about-hero { 
+    display: flex; 
+    gap: 40px; 
+    align-items: flex-start; 
+    max-width: 1000px; 
+    margin: 40px auto; 
+}
+.profile-pic { width: 400px; border-radius: 15px; } /* Rounded portrait */
+
+/* Fancy Contact Form */
+.fancy-contact { 
+    background: #f4f4f4; 
+    padding: 40px; 
+    border-radius: 20px; /* Rounded corners */
+    max-width: 600px; 
+    margin: 50px auto; 
+}
+.fancy-contact input, .fancy-contact textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px; /* Rounded inputs */
+    box-sizing: border-box;
+}
+.fancy-contact button {
+    background: #000;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px; /* Pill-shaped button */
+    cursor: pointer;
+    font-weight: bold;
+}
