@@ -46,24 +46,36 @@ body { background-color: var(--bg-color); color: var(--text-color); font-family:
 .contact-image-side img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .contact-form-side { width: 50%; padding: 80px; display: flex; flex-direction: column; justify-content: center; }
 
-/* Equipment Page Grid */
-.equipment-page { padding: 80px 40px; max-width: 1200px; margin: 0 auto; text-align: center; }
-.equipment-page h1 { font-size: 3rem; margin-bottom: 20px; }
-.disclaimer { color: #666; margin-bottom: 60px; }
+/* Equipment Page Formatting */
+.equipment-page { padding: 80px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
+.equipment-page h1 { font-size: 2.5rem; margin-bottom: 20px; font-weight: 900; }
+.disclaimer { color: #666; margin-bottom: 50px; }
 
 .gear-grid { 
     display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-    gap: 40px; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px; 
+    justify-items: center;
 }
 
 .gear-item { 
-    border: 1px solid #eee; 
-    padding: 20px; 
-    transition: 0.3s; 
+    background: #fff;
+    border: 1px solid #f0f0f0; 
+    padding: 30px; 
+    text-align: center;
+    transition: transform 0.3s ease;
 }
 
-.gear-item:hover { border-color: #000; }
-.gear-item img { width: 100%; height: auto; margin-bottom: 20px; }
-.gear-item h3 { margin-bottom: 10px; }
-.gear-item p { color: #555; font-size: 0.9rem; }
+.gear-item:hover { transform: translateY(-5px); border-color: #ddd; }
+
+/* THIS FIXES THE GIANT IMAGES */
+.gear-item img { 
+    width: 100%; 
+    max-width: 200px; /* Limits the image size */
+    height: auto; 
+    margin-bottom: 20px; 
+    object-fit: contain;
+}
+
+.gear-item h3 { font-size: 1.2rem; margin-bottom: 10px; }
+.gear-item p { font-size: 0.9rem; color: #666; line-height: 1.5; }
