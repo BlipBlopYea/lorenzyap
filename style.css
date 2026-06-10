@@ -1,101 +1,35 @@
 :root { --bg-color: #ffffff; --text-color: #000000; }
 
-/* Remove default browser margin and padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background-color: var(--bg-color); color: var(--text-color); font-family: 'Inter', sans-serif; overflow-x: hidden; }
 
-body { 
-    background-color: var(--bg-color); 
-    color: var(--text-color); 
-    font-family: 'Inter', sans-serif; 
-    overflow-x: hidden; 
-}
+/* Navigation - Force correct color and spacing */
+.site-navigation { background: #fff; padding: 20px 40px; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #eee; }
+.nav-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
+.nav-logo { font-weight: 900; font-size: 1.5rem; }
+.nav-links { display: flex; align-items: center; gap: 40px; margin-left: auto; }
 
-/* Navigation */
-.site-navigation { 
-    background-color: #ffffff; 
-    padding: 20px 40px; 
-    position: sticky; 
-    top: 0; 
-    z-index: 1000;
-}
-
-.nav-container { 
-    max-width: 1400px; 
-    margin: 0 auto; 
-    display: flex; 
-    justify-content: space-between; /* Keeps the logo on the left */
-    align-items: center; 
-    flex-wrap: nowrap;
-    padding: 0 20px; /* Ensures the container doesn't hit the screen edge */
-}
-
-/* Update this to pull the links together */
-.nav-links { 
-    display: flex; 
-    align-items: center; 
-    white-space: nowrap;
-    margin-left: auto; 
-    gap: 40px; /* THIS IS THE KEY: Replaces the margins on individual links */
-}
-
-/* Remove the individual left-margin that was spreading them out */
 .nav-links a { 
-    color: #333; 
+    color: #333 !important; /* Forces dark grey */
     text-decoration: none; 
-    margin-left: 0; /* Changed from 30px to 0 */
     font-weight: 700; 
-    font-size: 1rem;
-    transition: all 0.3s ease;
+    font-size: 1rem; 
+    transition: 0.3s;
 }
 
-/* Keep the dropdown adjusted to work with the new gap */
-.dropdown { 
-    position: relative; 
-    display: inline-block; 
-    margin-left: 0; /* Changed from 30px to 0 */
-    padding: 15px 0;
-}
-
-.dropdown-content { 
-    display: none; 
-    position: absolute; 
-    background-color: #ffffff; 
-    min-width: 180px; 
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.1); 
-    top: 100%; 
-    left: 0; 
-    padding: 10px 0;
-    z-index: 1000;
-}
-
-.dropdown-content a { 
-    color: #333 !important; 
-    padding: 10px 15px !important; 
-    display: block; 
-    margin-left: 0 !important; 
-    font-size: 0.9rem !important;
-    transition: all 0.3s ease;
-}
-
+/* Dropdown */
+.dropdown { position: relative; padding: 15px 0; }
+.dropdown-content { display: none; position: absolute; background: #fff; min-width: 180px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); padding: 10px 0; z-index: 1000; top: 100%; left: 0; }
+.dropdown-content a { color: #333 !important; padding: 10px 15px !important; display: block; font-size: 0.9rem !important; }
 .dropdown:hover .dropdown-content { display: block; }
 
-/* Hover glow effect for ALL links */
-.nav-links a:hover, .dropdown-content a:hover {
-    color: #000;
-    text-shadow: 0 0 8px rgba(0,0,0,0.5);
-    cursor: pointer;
-}
+/* Hover glow effect */
+.nav-links a:hover, .dropdown-content a:hover { color: #000; text-shadow: 0 0 8px rgba(0,0,0,0.5); cursor: pointer; }
 
-/* Fixed 3:2 Hero Carousel */
+/* Hero and Slider */
 .hero-carousel { width: 100%; aspect-ratio: 3 / 2; overflow: hidden; margin-bottom: 80px; }
 .carousel-slide { width: 100%; height: 100%; display: none; }
 .carousel-slide img { width: 100%; height: 100%; object-fit: cover; }
-
-/* 3:2 Comparison Slider */
 .section-title { text-align: center; font-size: 3.5rem; font-weight: 900; margin-bottom: 50px; }
 .slider-container { position: relative; width: 90%; max-width: 1200px; aspect-ratio: 3 / 2; margin: 0 auto 100px; border-radius: 20px; overflow: hidden; box-shadow: 0 25px 60px rgba(0,0,0,0.15); }
 .slider-img { width: 100%; height: 100%; object-fit: cover; position: absolute; }
@@ -105,7 +39,7 @@ body {
 .slider-handle { position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; background: #fff; z-index: 10; pointer-events: none; }
 .slider-button { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 50px; height: 50px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #000; font-size: 20px; }
 
-/* About Section 1:1 */
+/* About Section */
 .about-section { background: #fff; padding: 0; }
 .about-container { display: flex; align-items: center; width: 100%; }
 .about-image-side { width: 50%; aspect-ratio: 1 / 1; }
@@ -114,18 +48,12 @@ body {
 .about-text-side h2 { font-size: 3rem; font-weight: 900; margin-bottom: 30px; }
 .about-text-side p { font-size: 1.4rem; color: #333; line-height: 1.8; }
 
-/* Black Footer */
+/* Contact Page */
+.contact-page-container { display: flex; width: 100%; min-height: 70vh; }
+.contact-image-side { width: 50%; }
+.contact-image-side img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.contact-form-side { width: 50%; padding: 80px; display: flex; flex-direction: column; justify-content: center; }
+
+/* Footer */
 .site-footer { padding: 80px; text-align: center; background: #000; color: #fff; }
 .footer-links a { margin: 0 25px; font-weight: 700; color: #ccc; text-decoration: none; }
-
-/* Contact Page Split Layout */
-.contact-page-container {
-    display: flex;
-    width: 100%;
-    min-height: 80vh;
-}
-.contact-image-side { width: 50%; }
-.contact-image-side img { width: 100%; height: 100%; object-fit: cover; }
-.contact-form-side { width: 50%; padding: 80px; display: flex; flex-direction: column; justify-content: center; }
-.contact-form-side h1 { font-size: 3rem; margin-bottom: 20px; }
-.contact-form-side p { margin-bottom: 30px; line-height: 1.6; }
