@@ -117,3 +117,15 @@ body {
 /* Black Footer */
 .site-footer { padding: 80px; text-align: center; background: #000; color: #fff; }
 .footer-links a { margin: 0 25px; font-weight: 700; color: #ccc; text-decoration: none; }
+
+/* Contact Page Split Layout */
+.contact-page-container {
+    display: flex;
+    width: 100%;
+    min-height: 80vh;
+}
+.contact-image-side { width: 50%; }
+.contact-image-side img { width: 100%; height: 100%; object-fit: cover; }
+.contact-form-side { width: 50%; padding: 80px; display: flex; flex-direction: column; justify-content: center; }
+.contact-form-side h1 { font-size: 3rem; margin-bottom: 20px; }
+.contact-form-side p { margin-bottom: 30px; line-height: 1.6; }
