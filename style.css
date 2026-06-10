@@ -27,9 +27,9 @@ body {
     max-width: 1400px; 
     margin: 0 auto; 
     display: flex; 
-    justify-content: space-between; 
+    justify-content: space-between; /* Keeps logo on left */
     align-items: center; 
-    flex-wrap: nowrap; 
+    flex-wrap: nowrap;
 }
 
 .nav-logo { 
@@ -42,7 +42,8 @@ body {
 .nav-links { 
     display: flex; 
     align-items: center; 
-    white-space: nowrap; 
+    white-space: nowrap;
+    margin-left: auto; /* THIS IS THE FIX: This pushes the links to the right */
 }
 
 .nav-links a { 
