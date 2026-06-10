@@ -1,5 +1,4 @@
 :root { --bg-color: #ffffff; --text-color: #000000; }
-body { background-color: var(--bg-color); color: var(--text-color); font-family: 'Inter', sans-serif; }
 
 /* Remove default browser margin and padding */
 * {
@@ -8,11 +7,14 @@ body { background-color: var(--bg-color); color: var(--text-color); font-family:
     box-sizing: border-box;
 }
 
-body {
-    overflow-x: hidden; /* Prevents horizontal scrollbar if any element is slightly off */
+body { 
+    background-color: var(--bg-color); 
+    color: var(--text-color); 
+    font-family: 'Inter', sans-serif; 
+    overflow-x: hidden; 
 }
 
-/* Navigation - Updated for Single Line */
+/* Navigation */
 .site-navigation { 
     background-color: #ffffff; 
     padding: 20px 40px; 
@@ -27,60 +29,69 @@ body {
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
-    flex-wrap: nowrap; /* Prevents wrapping */
+    flex-wrap: nowrap; 
 }
 
 .nav-logo { 
     font-weight: 900; 
     color: #000; 
     font-size: 1.5rem; 
-    white-space: nowrap; /* Keeps logo on one line */
+    white-space: nowrap; 
 }
 
 .nav-links { 
     display: flex; 
     align-items: center; 
-    white-space: nowrap; /* Keeps all links on one line */
+    white-space: nowrap; 
 }
 
 .nav-links a { 
     color: #333; 
     text-decoration: none; 
-    margin-left: 30px; /* Adjust spacing as needed */
+    margin-left: 30px; 
     font-weight: 700; 
     font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
-/* Dropdown Fix - Improved Alignment */
+/* Dropdown */
 .dropdown { 
     position: relative; 
     display: inline-block; 
     margin-left: 30px; 
+    padding: 15px 0; /* Keeps menu open when moving mouse down */
 }
 
 .dropdown-content { 
     display: none; 
     position: absolute; 
     background-color: #ffffff; 
-    min-width: 150px; /* Set a fixed width */
+    min-width: 180px; 
     box-shadow: 0px 8px 16px rgba(0,0,0,0.1); 
     top: 100%; 
     left: 0; 
-    margin-top: 10px;
-    padding: 5px 0; /* Add a little internal spacing */
+    padding: 10px 0;
+    z-index: 1000;
 }
 
 .dropdown-content a { 
     color: #333 !important; 
     padding: 10px 15px !important; 
     display: block; 
-    margin-left: 0 !important; /* Removes the margin that was pushing them weirdly */
+    margin-left: 0 !important; 
     font-size: 0.9rem !important;
+    transition: all 0.3s ease;
 }
 
 .dropdown:hover .dropdown-content { display: block; }
+
+/* Hover glow effect for ALL links */
+.nav-links a:hover, .dropdown-content a:hover {
+    color: #000;
+    text-shadow: 0 0 8px rgba(0,0,0,0.5);
+    cursor: pointer;
 }
-.dropdown:hover .dropdown-content { display: block; }
+
 /* Fixed 3:2 Hero Carousel */
 .hero-carousel { width: 100%; aspect-ratio: 3 / 2; overflow: hidden; margin-bottom: 80px; }
 .carousel-slide { width: 100%; height: 100%; display: none; }
