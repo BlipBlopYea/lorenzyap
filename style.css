@@ -79,3 +79,8 @@ body { background-color: var(--bg-color); color: var(--text-color); font-family:
 
 .gear-item h3 { font-size: 1.2rem; margin-bottom: 10px; }
 .gear-item p { font-size: 0.9rem; color: #666; line-height: 1.5; }
+
+/* About Page Specific Styles */
+.about-page { padding: 80px 20px; max-width: 900px; margin: 0 auto; line-height: 1.8; }
+.about-content h1 { font-size: 3rem; margin-bottom: 30px; font-weight: 900; }
+.about-text p { margin-bottom: 25px; font-size: 1.1rem; color: #333; }
