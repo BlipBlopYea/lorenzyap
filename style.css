@@ -40,17 +40,34 @@ body { background-color: var(--bg-color); color: var(--text-color); font-family:
     font-size: 1rem;
 }
 
-/* Dropdown Fix */
-.dropdown { position: relative; display: inline-block; margin-left: 30px; }
+/* Dropdown Fix - Improved Alignment */
+.dropdown { 
+    position: relative; 
+    display: inline-block; 
+    margin-left: 30px; 
+}
+
 .dropdown-content { 
     display: none; 
     position: absolute; 
     background-color: #ffffff; 
-    min-width: 160px; 
+    min-width: 150px; /* Set a fixed width */
     box-shadow: 0px 8px 16px rgba(0,0,0,0.1); 
     top: 100%; 
     left: 0; 
     margin-top: 10px;
+    padding: 5px 0; /* Add a little internal spacing */
+}
+
+.dropdown-content a { 
+    color: #333 !important; 
+    padding: 10px 15px !important; 
+    display: block; 
+    margin-left: 0 !important; /* Removes the margin that was pushing them weirdly */
+    font-size: 0.9rem !important;
+}
+
+.dropdown:hover .dropdown-content { display: block; }
 }
 .dropdown:hover .dropdown-content { display: block; }
 /* Fixed 3:2 Hero Carousel */
