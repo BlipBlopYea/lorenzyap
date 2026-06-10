@@ -4,11 +4,38 @@
 body { background-color: var(--bg-color); color: var(--text-color); font-family: 'Inter', sans-serif; overflow-x: hidden; }
 
 /* Navigation - Force correct color and spacing */
-.site-navigation { background: #fff; padding: 20px 40px; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #eee; }
-.nav-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
-.nav-logo { font-weight: 900; font-size: 1.5rem; }
-.nav-links { display: flex; align-items: center; gap: 40px; margin-left: auto; }
+/* Navigation - Fixed layout */
+.site-navigation { 
+    background: #fff; 
+    padding: 20px 40px; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+    border-bottom: 1px solid #eee; 
+}
 
+.nav-container { 
+    max-width: 1400px; 
+    margin: 0 auto; 
+    display: flex; 
+    justify-content: space-between; /* Logo left, Links right */
+    align-items: center; 
+    padding: 0 20px; 
+}
+
+.nav-logo { 
+    font-weight: 900; 
+    font-size: 1.5rem; 
+    color: #000; /* Force black */
+    display: block; /* Ensure it stays visible */
+}
+
+.nav-links { 
+    display: flex; 
+    align-items: center; 
+    gap: 40px; 
+    margin-left: auto; /* Pushes everything to the right */
+}
 .nav-links a { 
     color: #333 !important; /* Forces dark grey */
     text-decoration: none; 
