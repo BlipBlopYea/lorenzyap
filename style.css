@@ -120,3 +120,27 @@ body { background-color: var(--bg-color); color: var(--text-color); font-family:
     cursor: pointer;
     font-weight: bold;
 }
+
+/* Roadmap Timeline Styles */
+.timeline { 
+    max-width: 600px; 
+    margin: 50px auto; 
+    border-left: 3px solid #000; /* The roadmap line */
+    padding-left: 30px; 
+}
+.timeline-item { margin-bottom: 40px; position: relative; }
+
+/* The dot on the roadmap */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -42px;
+    top: 5px;
+    width: 15px;
+    height: 15px;
+    background: #000;
+    border-radius: 50%;
+}
+
+.timeline-date { font-weight: bold; color: #555; }
+.timeline-content h3 { margin: 5px 0; }
