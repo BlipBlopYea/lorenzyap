@@ -13,93 +13,42 @@
             <div class="nav-logo">Lorenz Yap Photography</div>
             <div class="nav-links">
                 <a href="#what-i-do">What I Do</a>
-                <!-- Search for: <div class="nav-links"> -->
-<div class="nav-links">
-    <a href="#what-i-do">What I Do</a>
-    
-    <!-- INSERT THIS DROPDOWN BLOCK HERE -->
-    <div class="dropdown">
-        <a href="#" class="dropbtn">Info ▾</a>
-        <div class="dropdown-content">
-            <a href="equipment.html">Equipment</a>
-            <a href="about.html">About Me</a>
-        </div>
-    </div>
-    
-    <a href="#contact">Contact</a>
-    <a href="https://instagram.com" target="_blank" class="social-icon">IG</a>
-</div>
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">Info ▾</a>
+                    <div class="dropdown-content">
+                        <a href="equipment.html">Equipment</a>
+                        <a href="about.html">About Me</a>
+                    </div>
+                </div>
+                <a href="#contact">Contact</a>
+                <a href="https://instagram.com" target="_blank" class="social-icon">IG</a>
+            </div>
         </div>
     </nav>
 
+    <!-- FULL-WIDTH HERO SECTION -->
+    <section class="hero">
+        <img src="HeroImage.jpg" alt="Hero Photography" class="hero-img">
+    </section>
+
     <div class="portfolio-container">
-        
         <header class="intro-header">
             <p>I focus mostly on wildlife and landscape photography. My goal is to capture the pristine details of nature and share the raw beauty of the outdoors through my lens.</p>
         </header>
 
         <section class="slider-section">
             <h2 class="section-title">Color Grade Comparison</h2>
-            
             <div class="slider-container" id="sliderContainer">
                 <img src="Edit1.jpg" alt="Edited Image" class="slider-img img-after">
                 <div class="slider-badge badge-edited">Final Color Grade</div>
-
                 <div class="img-before" id="beforeImg">
                     <img src="Raw1.jpg" alt="RAW Image" class="slider-img">
                     <div class="slider-badge badge-raw">RAW (Hazy Kitlens)</div>
                 </div>
-
                 <input type="range" min="0" max="100" value="50" class="slider-input" id="imageSlider">
-
-                <div class="slider-handle" id="sliderHandle">
-                    <div class="slider-button">↔</div>
-                </div>
-            </div>
-            
-            <p style="text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 15px;">
-                <strong>Comparison:</strong> Click and drag the divider slider to reveal the editing done.
-            </p>
-        </section>
-
-        <section class="gallery-section">
-            <h2 class="section-title">Featured Works</h2>
-            
-            <div class="gallery-grid">
-                <div class="gallery-card">
-                    <img src="Sparrow.jpg" alt="Eurasian Tree Sparrow">
-                    <div class="gallery-info">
-                        <h3>Complementary Tones</h3>
-                        <p>Teal & Gold Palette Calibration • Luminance Target Masking</p>
-                    </div>
-                </div>
-
-                <div class="gallery-card">
-                    <img src="Munia.jpg" alt="Chestnut Munia">
-                    <div class="gallery-info">
-                        <h3>High-Angle Contrast</h3>
-                        <p>Dynamic Silhouette Recovery • Chromatic Aberration Correction</p>
-                    </div>
-                </div>
-
-                <div class="gallery-card">
-                    <img src="Grassbird.jpg" alt="Striated Grassbird">
-                    <div class="gallery-info">
-                        <h3>Subject Isolation</h3>
-                        <p>Environmental Exposure Shifting • Focus Depth Optimization</p>
-                    </div>
-                </div>
-
-                <div class="gallery-card">
-                    <img src="Sunbird.jpg" alt="Olive-backed Sunbird">
-                    <div class="gallery-info">
-                        <h3>Iridescence Separation</h3>
-                        <p>Selective Hue Mapping • Shadow Retexturing Workflows</p>
-                    </div>
-                </div>
+                <div class="slider-handle" id="sliderHandle"><div class="slider-button">↔</div></div>
             </div>
         </section>
-
     </div>
 
     <script src="script.js"></script>
