@@ -1,6 +1,17 @@
 :root { --bg-color: #ffffff; --text-color: #000000; }
 body { background-color: var(--bg-color); color: var(--text-color); font-family: 'Inter', sans-serif; }
 
+/* Remove default browser margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden; /* Prevents horizontal scrollbar if any element is slightly off */
+}
+
 /* Navigation - Updated for Single Line */
 .site-navigation { 
     background-color: #ffffff; 
